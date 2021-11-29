@@ -16,10 +16,10 @@ public class ChangeAnimationScript : MonoBehaviour
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         myAnimator = GetComponent<Animator>();
-        idleAnimation = Resources.Load("Animations/Bobby_Idle_Controller") as RuntimeAnimatorController;
-        walkAnimation = Resources.Load("Animations/Bobby_Walk_Controller") as RuntimeAnimatorController;
-        shootAnimation = Resources.Load("Animations/Bobby_Shoot_Controller") as RuntimeAnimatorController;
-        dieAnimation = Resources.Load("Animations/Bobby_Die_Controller") as RuntimeAnimatorController;
+        idleAnimation = Resources.Load("Animations/idle") as RuntimeAnimatorController;
+        walkAnimation = Resources.Load("Animations/walk") as RuntimeAnimatorController;
+        shootAnimation = Resources.Load("Animations/shoot") as RuntimeAnimatorController;
+        dieAnimation = Resources.Load("Animations/Bobby_Die") as RuntimeAnimatorController;
 
     }
 
