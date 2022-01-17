@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class BobbyScript : MonoBehaviour
@@ -12,6 +13,8 @@ public class BobbyScript : MonoBehaviour
     RuntimeAnimatorController dieAnimation;
 
     System.Boolean flipped = false;
+
+    System.Boolean isDead = false;
     void Start()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -30,6 +33,7 @@ public class BobbyScript : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical"); // not using this
 
+        if (isDead) return;
 
         if (!Input.anyKey)
         {
@@ -67,10 +71,6 @@ public class BobbyScript : MonoBehaviour
             currentPos.y = currentPos.y + 0.1f;
             transform.position = currentPos;
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            runspeed = 1f;
-        }
 
 
         if (Input.GetKey(KeyCode.Space))
@@ -82,11 +82,37 @@ public class BobbyScript : MonoBehaviour
         if (Input.GetKey(KeyCode.X))
         {
             // die, but make sure the Animation loop setting has been turned off
-            myAnimator.runtimeAnimatorController = dieAnimation;
+
 
         }
 
         // set the sprite facing the correct way
         mySpriteRenderer.flipX = flipped;
     }
+
+
+
+    // adapt the current killBobby method thus…
+    //
+    public void killBobby()
+    {
+        myAnimator.runtimeAnimatorController = dieAnimation;
+        isDead = true;
+        StartCoroutine(jumpToFirstLevelAfter3Seconds(3));
+    }
+
+    // add this new method in
+    // it does the waiting for 3 seconds
+    IEnumerator jumpToFirstLevelAfter3Seconds(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        // Code to execute after the delay
+
+        SceneManager.LoadSceneAsync("Scenes/Menu");
+    }
+
 }
+
+
+

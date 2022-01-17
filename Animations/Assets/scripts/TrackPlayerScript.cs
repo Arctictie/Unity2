@@ -8,7 +8,7 @@ public class TrackPlayerScript : MonoBehaviour
     Transform playerTransform;
     void Start()
     {
-        playerTransform = GameObject.Find("Bobby").transform;
+        playerTransform = GameObject.Find("bobby").transform;
     }
 
     // Update is called once per frame

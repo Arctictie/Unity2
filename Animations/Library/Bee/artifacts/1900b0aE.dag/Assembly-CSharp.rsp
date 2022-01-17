@@ -332,6 +332,12 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/scripts/BobbyScript.cs"
+"Assets/scripts/CollectableScript.cs"
+"Assets/scripts/HealthScript.cs"
+"Assets/scripts/InflictDamageScript.cs"
+"Assets/scripts/NextLevelScript.cs"
+"Assets/scripts/PlayButtonScript.cs"
+"Assets/scripts/ScoreScript.cs"
 "Assets/scripts/TrackPlayerScript.cs"
 -langversion:8.0
 
