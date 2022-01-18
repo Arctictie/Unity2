@@ -92,6 +92,8 @@ public class BobbyScript : MonoBehaviour
 
 
 
+
+
     // adapt the current killBobby method thus…
     //
     public void killBobby()

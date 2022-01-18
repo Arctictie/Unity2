@@ -1,5 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+
 
 public class HealthScript : MonoBehaviour
 {
@@ -17,6 +21,15 @@ public class HealthScript : MonoBehaviour
     void Update()
     {
         myText.text = "Health: " + health;
+
+        if(health < 1)
+        {
+           
+           
+     
+            SceneManager.LoadSceneAsync("Scenes/Menu");
+        }
+
 
     }
 }
